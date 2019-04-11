@@ -25,7 +25,7 @@ describe('Store', () => {
   });
 
   it('should add an element', (done) => {
-    store.getAll().subscribe(
+    store.getAll().pipe(skip(1)).subscribe(
       (data) => {
         expect(data).toEqual([{id: '1', attribute: '2'}]);
         done();
@@ -35,7 +35,7 @@ describe('Store', () => {
   });
 
   it('should add all elements', (done) => {
-    store.getAll().subscribe(
+    store.getAll().pipe(skip(1)).subscribe(
       (data) => {
         expect(data).toEqual([{id: '1', attribute: '2'}, {id: '2', attribute: '2'}]);
         done();
@@ -46,7 +46,7 @@ describe('Store', () => {
   });
 
   it('should update an element', (done) => {
-    store.getOne('1').pipe(skip(1)).subscribe((data) => {
+    store.getOne('1').pipe(skip(2)).subscribe((data) => {
       expect(data).toEqual({id: '1', attribute: '2'});
       done();
     });
@@ -56,7 +56,7 @@ describe('Store', () => {
   });
 
   it('should remove an element by id', (done) => {
-    store.getAll().pipe(skip(1)).subscribe((data) => {
+    store.getAll().pipe(skip(2)).subscribe((data) => {
       expect(data).toEqual([{id: '2', attribute: '2'}]);
       done();
     });
@@ -65,7 +65,7 @@ describe('Store', () => {
   });
 
   it('should remove all elements', (done) => {
-    store.getAll().pipe(skip(1)).subscribe((data) => {
+    store.getAll().pipe(skip(2)).subscribe((data) => {
       expect(data).toEqual([]);
       done();
     });
@@ -74,7 +74,7 @@ describe('Store', () => {
   });
 
   it('should add many items', (done) => {
-    store.getAll().subscribe(data => {
+    store.getAll().pipe(skip(1)).subscribe(data => {
       expect(data).toEqual([{id: '1', attribute: '1'}, {id: '2', attribute: '2'}]);
       done();
     });
@@ -82,7 +82,7 @@ describe('Store', () => {
   });
 
   it('should return undefined if id not exists', (done) => {
-    store.getOne('notExist').subscribe(data => {
+    store.getOne('notExist').pipe(skip(1)).subscribe(data => {
       expect(data).toBeUndefined();
       done();
     });
@@ -90,7 +90,7 @@ describe('Store', () => {
   });
 
   it('should get the entities', (done) => {
-    store.getEntities().subscribe(data => {
+    store.getEntities().pipe(skip(1)).subscribe(data => {
       expect(data).toEqual({'1': {attribute: '1'}});
       done();
     });
@@ -98,7 +98,7 @@ describe('Store', () => {
   });
 
   it('should get the ids', (done) => {
-    store.getIds().subscribe(data => {
+    store.getIds().pipe(skip(1)).subscribe(data => {
       expect(data).toEqual(['1', '2']);
       done();
     });
@@ -106,7 +106,7 @@ describe('Store', () => {
   });
 
   it('should get one dynamic', (done) => {
-    store.getOneDynamic(of('1')).subscribe(data => {
+    store.getOneDynamic(of('1')).pipe(skip(1)).subscribe(data => {
       expect(data).toEqual({id: '1', attribute: '1'});
       done();
     });

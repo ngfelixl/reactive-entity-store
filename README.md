@@ -32,6 +32,7 @@ export interface Book {
 
 export const books = new Store<Book>();
 books.getAll().subscribe(books => console.log(books));
+// logs []
 books.add({ id: 'tcc', title: 'Clean Coder', author: 'Bob' });
 // logs [({ id: 'tcc', title: 'Clean Coder', author: 'Bob' }]
 ```

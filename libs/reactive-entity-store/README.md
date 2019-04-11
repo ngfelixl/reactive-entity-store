@@ -45,6 +45,7 @@ purposes. Lets create a reader of the store, lets name it **service.ts**.
 import { books } from './pathto/books-store';
 
 books.getAll().subscribe(books => console.log(books));
+// logs [] immediately, starts with an empty store
 
 // there are several other "getters"
 books.getOne('id1');            // Observable<Book>

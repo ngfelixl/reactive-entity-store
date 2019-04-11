@@ -1,5 +1,5 @@
 import { Subject, Observable } from 'rxjs';
-import { scan, map, pluck, share, switchMap } from 'rxjs/operators';
+import { scan, map, pluck, share, switchMap, startWith } from 'rxjs/operators';
 import { Action, Update, EntityStore, Entities } from './interfaces';
 import { addOne, addAll, addMany, updateOne, removeOne, removeAll } from './reducers';
 
@@ -48,6 +48,7 @@ export class Store<T> {
           case 'removeAll': return removeAll<T>();
         }
       }, {entities: {}, ids: []}),
+      startWith({entities: {}, ids: []}),
       share()
     );
   }
