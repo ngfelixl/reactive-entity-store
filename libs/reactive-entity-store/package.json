@@ -1,6 +1,6 @@
 {
   "name": "reactive-entity-store",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "Powerful and ultra lightweight reactive crud entity store powered by RxJS",
   "author": "Felix Lemke <flemke.dev@gmail.com> (https://felixlemke.com)",
   "keywords": [

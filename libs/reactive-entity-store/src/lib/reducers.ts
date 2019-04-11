@@ -46,7 +46,7 @@ export function updateOne<T>(store: EntityStore<T>, update: Update) {
 }
 
 function safeId<T>(entity: T, entities: Entities<T>) {
-  return encodeURIComponent(entity['id']) || createUniqueId(entities);
+  return entity['id'] ? encodeURIComponent(entity['id']) : createUniqueId(entities);
 }
 
 function addToStore<T>(store: EntityStore<T>, entity: T): EntityStore<T> {

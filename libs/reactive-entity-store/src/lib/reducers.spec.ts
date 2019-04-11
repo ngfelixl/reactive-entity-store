@@ -20,6 +20,23 @@ describe('reducers', () => {
       store = addOne(store, {id: '1', name: 'Paul'});
       expect(store).toEqual({entities: {'1': {name: 'Paul'}}, ids: ['1']});
     });
+
+    it('should add an item without having id property', () => {
+      store = addOne(store, {name: 'Jörg'});
+      expect(Object.values(store.entities)).toEqual([{name: 'Jörg'}]);
+      expect(store.ids.length).toBe(1);
+    });
+
+    it('should not add elements with duplicate id', () => {
+      store = {entities: {'1': {name: 'Paul'}}, ids: ['1']};
+      store = addOne(store, {id: '1', name: 'Maya'});
+      expect(store).toEqual({entities: {'1': {name: 'Paul'}}, ids: ['1']});
+    });
+
+    it('should return the store if entity is falsy', () => {
+      store = addOne(store, undefined);
+      expect(store).toEqual({entities: {}, ids: []});
+    });
   });
 
   describe('addMany', () => {
