@@ -88,6 +88,7 @@ If you don't provide an `id` property it will autogenerate a string of 20 charac
 Hi, I am Felix,
 Software developer and NgRX contributor. If you have questions, don't hesitate to reach out.
 
+
 <img src="https://avatars2.githubusercontent.com/u/24190530" width="150" style="border-radius: 50%;">
 
 If you like this library, think about giving it a [star](https://github.com/ngfelixl/nodeplotlib-nx) or follow me on twitter or github or check out my personal
