@@ -46,7 +46,6 @@ export class Store<T> {
           case 'update': return updateOne<T>(store, action.payload);
           case 'remove': return removeOne<T>(store, action.payload);
           case 'removeAll': return removeAll<T>();
-          default: return store;
         }
       }, {entities: {}, ids: []}),
       share()

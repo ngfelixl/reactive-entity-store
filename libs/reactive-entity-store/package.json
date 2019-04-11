@@ -17,9 +17,9 @@
     "url": "git+https://github.com/ngfelixl/nodeplotlib-nx.git"
   },
   "bugs": {
-    "url": "https://github.com/ngfelixl/nodeplotlib-nx/issues"
+    "url": "https://github.com/ngfelixl/reactive-entity-store/issues"
   },
-  "homepage": "https://github.com/ngfelixl/nodeplotlib-nx/tree/master/libs/reactive-entity-store#readme",
+  "homepage": "https://github.com/ngfelixl/reactive-entity-store#readme",
   "peerDependencies": {
     "rxjs": "6.4.0"
   }

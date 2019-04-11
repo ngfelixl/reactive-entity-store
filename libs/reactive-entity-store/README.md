@@ -1,5 +1,7 @@
 # Reactive Entity Store
 
+[![Build Status](https://travis-ci.com/ngfelixl/reactive-entity-store.svg?branch=master)](https://travis-ci.com/ngfelixl/reactive-entity-store)
+[![Coverage Status](https://coveralls.io/repos/github/ngfelixl/reactive-entity-store/badge.svg?branch=master)](https://coveralls.io/github/ngfelixl/reactive-entity-store?branch=master)
 ![NPM](https://img.shields.io/npm/l/reactive-entity-store.svg)
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/reactive-entity-store.svg)
 

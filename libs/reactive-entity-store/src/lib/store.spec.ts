@@ -1,6 +1,6 @@
 import { Store } from "./store";
 import { TestScheduler } from 'rxjs/testing';
-import { Subscription } from 'rxjs';
+import { Subscription, of } from 'rxjs';
 import { skip } from 'rxjs/operators';
 
 interface Test {
@@ -71,6 +71,46 @@ describe('Store', () => {
     });
     store.addAll([{id: '1', attribute: '1'}, {id: '2', attribute: '2'}]);
     store.removeAll();
+  });
+
+  it('should add many items', (done) => {
+    store.getAll().subscribe(data => {
+      expect(data).toEqual([{id: '1', attribute: '1'}, {id: '2', attribute: '2'}]);
+      done();
+    });
+    store.addMany([{id: '1', attribute: '1'}, {id: '2', attribute: '2'}]);
+  });
+
+  it('should return undefined if id not exists', (done) => {
+    store.getOne('notExist').subscribe(data => {
+      expect(data).toBeUndefined();
+      done();
+    });
+    store.add({id: '1', attribute: '1'});
+  });
+
+  it('should get the entities', (done) => {
+    store.getEntities().subscribe(data => {
+      expect(data).toEqual({'1': {attribute: '1'}});
+      done();
+    });
+    store.add({id: '1', attribute: '1'});
+  });
+
+  it('should get the ids', (done) => {
+    store.getIds().subscribe(data => {
+      expect(data).toEqual(['1', '2']);
+      done();
+    });
+    store.addAll([{id: '1', attribute: '1'}, {id: '2', attribute: '2'}]);
+  });
+
+  it('should get one dynamic', (done) => {
+    store.getOneDynamic(of('1')).subscribe(data => {
+      expect(data).toEqual({id: '1', attribute: '1'});
+      done();
+    });
+    store.add({id: '1', attribute: '1'});
   });
 
   afterEach(() => {
