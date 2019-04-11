@@ -1,0 +1,26 @@
+{
+  "name": "reactive-entity-store",
+  "version": "0.0.4",
+  "description": "Powerful and ultra lightweight reactive crud entity store powered by RxJS",
+  "author": "Felix Lemke <flemke.dev@gmail.com> (https://felixlemke.com)",
+  "keywords": [
+    "rxjs",
+    "store",
+    "reactive",
+    "entity-store",
+    "rx",
+    "3kb minified"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngfelixl/nodeplotlib-nx.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ngfelixl/nodeplotlib-nx/issues"
+  },
+  "homepage": "https://github.com/ngfelixl/nodeplotlib-nx/tree/master/libs/reactive-entity-store#readme",
+  "peerDependencies": {
+    "rxjs": "6.4.0"
+  }
+}

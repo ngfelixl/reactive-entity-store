@@ -2,7 +2,41 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "",
-  "projects": {},
+  "projects": {
+    "reactive-entity-store": {
+      "root": "libs/reactive-entity-store",
+      "sourceRoot": "libs/reactive-entity-store/src",
+      "projectType": "library",
+      "prefix": "reactive-entity-store",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/reactive-entity-store/tsconfig.lib.json",
+            "project": "libs/reactive-entity-store/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/reactive-entity-store/tsconfig.lib.json",
+              "libs/reactive-entity-store/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/reactive-entity-store/jest.config.js",
+            "tsConfig": "libs/reactive-entity-store/tsconfig.spec.json"
+          }
+        }
+      },
+      "schematics": {}
+    }
+  },
   "cli": {
     "warnings": {
       "typescriptMismatch": false,
@@ -10,5 +44,6 @@
     },
     "defaultCollection": "@nrwl/schematics"
   },
-  "schematics": {}
+  "schematics": {},
+  "defaultProject": "reactive-entity-store"
 }
