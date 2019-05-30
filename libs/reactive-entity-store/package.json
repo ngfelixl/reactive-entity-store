@@ -1,6 +1,6 @@
 {
   "name": "reactive-entity-store",
-  "version": "0.3.0",
+  "version": "0.3.2",
   "description": "Powerful and ultra lightweight reactive crud entity store powered by RxJS",
   "author": "Felix Lemke <flemke.dev@gmail.com> (https://felixlemke.com)",
   "keywords": [
@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/ngfelixl/reactive-entity-store#readme",
   "peerDependencies": {
-    "rxjs": "6.4.0"
+    "rxjs": "6.5.2"
   }
 }
